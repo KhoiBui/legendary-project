@@ -48,14 +48,6 @@ const routes = createBrowserRouter([
 ]);
 
 
-// let homeSubMenu = ""; if(menuStatus === "home"){homeSubMenu = "open";}
-// let donateSubMenu = ""; if(menuStatus === "home"){projectsSubMenu = "open";}
-// let involvedSubMenu = ""; if(menuStatus === "home"){projectsSubMenu = "open";}
-// let projectsSubMenu = ""; if(menuStatus === "home"){projectsSubMenu = "open";}
-// const router = createBrowserRouter(routes);
-
-
-
 function App() {
   return (
     <RouterProvider router = {routes} />
