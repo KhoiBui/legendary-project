@@ -21,7 +21,6 @@ const routes = createBrowserRouter([
     element: (
       <Wrapper>
         <Header />
-        <Outlet />
         <Body />
         <Footer />
       </Wrapper>

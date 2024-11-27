@@ -10,13 +10,13 @@ const StyledHeader = styled.section`
   flex-direction: column;
   position:relative;
 
-
   nav{
     position:absolute;
     bottom: 0;
     width: 100%;
     text-align: center;
   }
+
   nav ul {
     list-style: none;
     padding: 0;
@@ -34,10 +34,9 @@ const StyledHeader = styled.section`
   .submenu {
     display: none;
     position: absolute;
-    top: 1em;
+    top: 1.3em;
     right: 100;
     background: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     list-style: none;
     padding: 0.1em;
   }
@@ -46,20 +45,15 @@ const StyledHeader = styled.section`
     display: block;
   }
 
-  .submenu li {
-    margin: 0.1em 0;
-  }
-
   .submenu li a {
     display: block;
-    padding: 0.2em;
+    padding: 0.1em;
     text-decoration: none;
     color: black;
   }
 
   .submenu li a:hover {
-    
-    background: #ADD8E6;
+    color: #ADD8E6;
   }
 `;
 
@@ -67,6 +61,7 @@ export function Header() {
   return (
     <StyledHeader>
       <nav>
+
         <ul>
           <li>
             <Link to="/">HOME</Link>
@@ -120,7 +115,6 @@ export function Header() {
             <Link to="/contact">CONTACT</Link>
           </li>
         </ul>
-        <Outlet />
       </nav>
     </StyledHeader>
   );

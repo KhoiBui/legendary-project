@@ -5,9 +5,7 @@ export const StyledFooter = styled.section`
   background-color: #000000;
   color: white;
   display: flex;
-  justify-content: space-between;
-  align-items: left; 
-  flex-wrap: no-wrap; 
+  align-items: center; 
 
   .box {
     flex: .5; 
