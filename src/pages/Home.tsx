@@ -1,3 +1,4 @@
+import { PageHeader } from '@common/headers/PageHeader';
 import { SectionHeader } from '@common/headers/SectionHeader';
 import { SectionHeaderLarge } from '@common/headers/SectionHeaderLarge';
 import { SubSectionHeader } from '@common/headers/SubSectionHeader';
@@ -6,6 +7,7 @@ import { TextBody } from '@common/texts/TextBody';
 export const Home = () => {
   return (
     <div style={{ padding: '24px' }}>
+      <PageHeader title='SUPPORT US' />
       <SectionHeader title='Providing Care in Vietnam' />
       <SectionHeaderLarge title='Announcement' />
       <SubSectionHeader title='Philanthropy' />
