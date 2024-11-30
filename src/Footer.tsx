@@ -1,51 +1,40 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const StyledFooter = styled.section`
-  padding: 1em;
+  padding-inline: 200px;
+  padding-block: 24px;
   background-color: #000000;
   color: white;
   display: flex;
-  align-items: center; 
+  align-items: center;
+  justify-content: space-between;
+`;
 
-  .box {
-    flex: .5; 
-    max-width: 15%; 
-    font-size: 0.6em;
-    line-height: 1.5; 
-  }
-
-  .contact{
-    text-align: center;
-    margin-right: auto;
-    line-height:.5;
-  }
-  .rights{
-    text-align: center;
-    margin-left: auto;
-  }
-  a{
-    color: #00bfff;
-    text-decoration: underline;
-  }
+const ContactUs = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-left: 32px;
 `;
 
 export function Footer() {
   return (
     <StyledFooter>
-      <div className="box rights">
-        <p>
+      <div className='box rights'>
+        <span>
           © 2022: VnHOPE.org. All Rights Reserved. VnHOPE Alliance, inc. is a
           tax-exempt organization as described in Section 501(c)(3) of the
           Internal Revenue Code; EIN #81-4021917
-        </p>
+        </span>
       </div>
-      <div className="box contact">
-        <p>CONTACT US</p>
-        <p>
-          <a href="mailto:vnhopesummer@gmail.com">vnhopesummer@gmail.com</a>
+      <ContactUs>
+        <p style={{ marginBlock: '0px' }}>
+          CONTACT US
+          <br />
+          <a href='mailto:vnhopesummer@gmail.com'>vnhopesummer@gmail.com</a>
         </p>
-        <p>Irvine, CA</p>
-      </div>
+        <p style={{ marginBlock: '0px' }}>Irvine, CA</p>
+      </ContactUs>
     </StyledFooter>
   );
 }
