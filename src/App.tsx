@@ -20,7 +20,7 @@ function App() {
     <Router>
       <Wrapper>
         <Header />
-        <main>
+        <main style={{ paddingBlock: '32px' }}>
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/donate' element={<Donate />} />
