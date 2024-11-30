@@ -3,7 +3,7 @@ import { Home } from '@pages/Home';
 import styled from 'styled-components';
 import Header from './Header';
 import { Footer } from './Footer';
-import { DonateForm } from '@common/forms/DonateForm';
+import { Donate } from '@pages/Donate';
 
 const Wrapper = styled.div`
   display: flex;
@@ -23,7 +23,7 @@ function App() {
         <main>
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/donate' element={<DonateForm />} />
+            <Route path='/donate' element={<Donate />} />
           </Routes>
         </main>
         <Footer />

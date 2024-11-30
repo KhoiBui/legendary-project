@@ -137,7 +137,18 @@ export const DonateForm = () => {
         </FormInput>
 
         <FormInput>
-          <label htmlFor='email'>Email</label>
+          <label htmlFor='email'>
+            Email{' '}
+            <span
+              style={{
+                color: 'red',
+                fontSize: '16px',
+                fontWeight: 700,
+              }}
+            >
+              *
+            </span>
+          </label>
           <input
             name='email'
             type='email'
@@ -148,7 +159,18 @@ export const DonateForm = () => {
         </FormInput>
 
         <FormInput>
-          <label htmlFor='amount'>Donation Amount ($)</label>
+          <label htmlFor='amount'>
+            Donation Amount ($){' '}
+            <span
+              style={{
+                color: 'red',
+                fontSize: '16px',
+                fontWeight: 700,
+              }}
+            >
+              *
+            </span>
+          </label>
           <input
             name='amount'
             type='number'
