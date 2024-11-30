@@ -1,17 +1,17 @@
-import styled from "styled-components";
-import { Link, Outlet } from "react-router-dom";
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const StyledHeader = styled.section`
   padding: 0;
   text-align: center;
   height: 150px;
-  background: #ADD8E6;
+  background: #add8e6;
   display: flex;
   flex-direction: column;
-  position:relative;
+  position: relative;
 
-  nav{
-    position:absolute;
+  nav {
+    position: absolute;
     bottom: 0;
     width: 100%;
     text-align: center;
@@ -28,7 +28,7 @@ const StyledHeader = styled.section`
 
   nav a {
     color: black;
-    font-size: 10px;
+    font-size: 16px;
   }
 
   .submenu {
@@ -53,66 +53,65 @@ const StyledHeader = styled.section`
   }
 
   .submenu li a:hover {
-    color: #ADD8E6;
+    color: #add8e6;
   }
 `;
 
-export function Header() {
+function Header() {
   return (
     <StyledHeader>
       <nav>
-
         <ul>
           <li>
-            <Link to="/">HOME</Link>
-            <ul className="submenu">
+            <Link to='/'>HOME</Link>
+            <ul className='submenu'>
               <li>
-                <Link to="/our-story">OUR STORY</Link>
+                <Link to='/our-story'>OUR STORY</Link>
               </li>
               <li>
-                <Link to="/our-mission">OUR MISSION</Link>
+                <Link to='/our-mission'>OUR MISSION</Link>
               </li>
               <li>
-                <Link to="/our-board-members">OUR BOARD MEMBERS</Link>
-              </li>
-            </ul>
-          </li>
-
-          <li>
-            <Link to="/projects">PROJECTS</Link>
-            <ul className="submenu">
-              <li>
-                <Link to="/past-medical-missions">PAST MEDICAL MISSIONS</Link>
+                <Link to='/our-board-members'>OUR BOARD MEMBERS</Link>
               </li>
             </ul>
           </li>
 
           <li>
-            <Link to="/get-involved">GET INVOLVED</Link>
-            <ul className="submenu">
+            <Link to='/projects'>PROJECTS</Link>
+            <ul className='submenu'>
               <li>
-                <Link to="/copy-of-apply">APPLY NOW</Link>
-              </li>
-              <li>
-                <Link to="/registration-process">REGISTRATION PROCESS</Link>
-              </li>
-              <li>
-                <Link to="/logistics">LOGISTICS</Link>
+                <Link to='/past-medical-missions'>PAST MEDICAL MISSIONS</Link>
               </li>
             </ul>
           </li>
 
           <li>
-            <Link to="/donate">DONATE</Link>
+            <Link to='/get-involved'>GET INVOLVED</Link>
+            <ul className='submenu'>
+              <li>
+                <Link to='/copy-of-apply'>APPLY NOW</Link>
+              </li>
+              <li>
+                <Link to='/registration-process'>REGISTRATION PROCESS</Link>
+              </li>
+              <li>
+                <Link to='/logistics'>LOGISTICS</Link>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <Link to='/donate'>DONATE</Link>
           </li>
           <li>
-            <Link to="/blog">BLOG</Link>
+            <Link to='/blog'>BLOG</Link>
           </li>
           <li>
-            <Link to="/faq">FAQ</Link>
+            <Link to='/faq'>FAQ</Link>
           </li>
           <li>
-            <Link to="/contact">CONTACT</Link>
+            <Link to='/contact'>CONTACT</Link>
           </li>
         </ul>
       </nav>
