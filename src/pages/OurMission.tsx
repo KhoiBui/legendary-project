@@ -1,5 +1,5 @@
 import { PageHeader } from '@common/headers/PageHeader';
-import { SubSectionHeader } from '@common/headers/SubSectionheader';
+import { SubSectionHeader } from '@common/headers/SubSectionHeader';
 import { styled } from 'styled-components';
 
 
