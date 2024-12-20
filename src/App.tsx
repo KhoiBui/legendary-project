@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Header from './Header';
 import { Footer } from './Footer';
 import { Donate } from '@pages/Donate';
+import { OurMission } from '@pages/OurMission';
 
 const Wrapper = styled.div`
   display: flex;
@@ -14,7 +15,11 @@ const Wrapper = styled.div`
   width: 100vw;
   overflow: scroll;
 `;
+// Build out the rest of donate page, leave a placeholder section
+// for the images on the actual site. --> check
 
+// Build our-mission, take a look at Home.tsx to see common components
+// that can be resused for the page. Build new components as seen fit
 function App() {
   return (
     <Router>
@@ -24,6 +29,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/donate' element={<Donate />} />
+            <Route path='/our-mission' element={<OurMission />} />
           </Routes>
         </main>
         <Footer />
