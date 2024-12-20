@@ -1,0 +1,23 @@
+# Build directories
+/build/
+/build-*/
+
+# IDE specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Compiled files
+*.o
+*.out
+*.exe
+*.dylib
+*.so
+*.dll
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+compile_commands.json 
