@@ -1,21 +1,19 @@
 import { PageHeader } from '@common/headers/PageHeader';
 import { SectionHeader } from '@common/headers/SectionHeader';
-import { SectionHeaderLarge } from '@common/headers/SectionHeaderLarge';
-import { SubSectionHeader } from '@common/headers/SubSectionHeader';
+
 import { TextBody } from '@common/texts/TextBody';
 
 export const Home = () => {
   return (
     <div style={{ padding: '24px' }}>
-      <PageHeader title='SUPPORT US' />
       <SectionHeader title='Providing Care in Vietnam' />
-      <SectionHeaderLarge title='Announcement' />
-      <SubSectionHeader title='Philanthropy' />
+        // slideshow of images
+      <PageHeader title='ANNOUNCEMENTS' />
       <TextBody>
-        <p>
-          Registration for VnHOPE Summer Medical Mission 2025 will be open on
-          November 1st, 2024.
-        </p>
+        <h2>
+          <b>Registration for VnHOPE Summer Medical Mission 2025 will be open on
+          November 1st, 2024. </b>
+        </h2>
         <p>
           VnHOPE's next Summer Medical Mission is scheduled for June 22 – July
           6, 2025.
@@ -35,14 +33,14 @@ export const Home = () => {
           country's quarantine rules.
         </p>
         <p>
-          *REGISTRATION UPDATE: We have reached our maximum capacity for
+          <span style={{color:'red'}}>*REGISTRATION UPDATE: We have reached our maximum capacity for
           College, Gap Year, and High School students. We are no longer
           accepting applications for these 3 categories. Students in
           Professional schools (Medical, Dental, Optometry, and Pharmacy) are
           still welcome to apply.In any case we are still receiving more
           college/gap year/high school applications applied via Professional
           student application, those applications will be in the waiting list
-          and we will inform you.
+          and we will inform you.</span>
         </p>
       </TextBody>
     </div>

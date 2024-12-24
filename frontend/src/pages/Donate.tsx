@@ -2,6 +2,8 @@ import { DonateForm } from '@common/forms/DonateForm';
 import { PageHeader } from '@common/headers/PageHeader';
 import { styled } from 'styled-components';
 
+import wheelChair from '../assets/images/wheelchair2.jpg'
+
 const Container = styled.main`
   width: 100%;
 `;
@@ -20,7 +22,7 @@ const Section = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 1rem;
 
   ul{
   list-style: none;
@@ -30,7 +32,8 @@ const Section = styled.div`
 const ImageSection = styled.div`
   display: flex;
   justify-content: center;
-  padding: 8em;
+  padding: 1em;
+
 `
 
 export const Donate = () => {
@@ -40,7 +43,7 @@ export const Donate = () => {
       <Content>
         <Section>
           <ImageSection>
-            <p> Image Placeholder </p>
+            <img src = {wheelChair} />
           </ImageSection>
           <p> To our donors, we owe you much gratitude for your generosity. 
             Our primary mission remains firmly focused on delivering healthcare to the needy in Vietnam. 
