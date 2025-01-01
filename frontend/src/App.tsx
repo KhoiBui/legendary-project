@@ -10,6 +10,11 @@ import { GetInvolved } from '@pages/GetInvolved';
 import { RegistrationProcess } from '@pages/RegistrationProcess';
 import { Logistics } from '@pages/Logistics';
 import { OurBoardMembers } from '@pages/OurBoardMembers';
+import { Contact } from '@pages/Contact';
+import { Projects } from '@pages/Projects'
+import { PastMedicalMissions } from '@pages/PastMedicalMissions';
+import { OurStory } from '@pages/OurStory';
+import { ApplyNow } from '@pages/ApplyNow';
 
 const Wrapper = styled.div`
   display: flex;
@@ -36,7 +41,11 @@ function App() {
             <Route path ='/registration-process' element = {<RegistrationProcess/>} />
             <Route path='/logistics' element = {<Logistics/>}/>
             <Route path = '/our-board-members' element = {<OurBoardMembers/>} />
-            
+            <Route path = '/contact' element = {<Contact/>} />
+            <Route path = '/projects' element = {<Projects/>} />
+            <Route path = '/past-medical-missions' element = {<PastMedicalMissions/>} />
+            <Route path = '/our-story' element = {<OurStory/>} />
+            <Route path = '/copy-of-apply' element = {<ApplyNow/>} />
           </Routes>
         </main>
         <Footer />
