@@ -1,7 +1,6 @@
 
 import { Link } from 'react-router-dom';
-
-
+import { styled } from 'styled-components';
 
 import { PageHeader } from '@common/headers/PageHeader';
 import { SubSectionHeader } from '@common/headers/SubSectionHeader';
@@ -9,9 +8,30 @@ import { TextBody } from '@common/texts/TextBody';
 
 import DSC from '../assets/images/DSC03841.jpg'
 
+const Section = styled.div`
+display: flex;
+flex-direction: row;
+width: 100%;
+max-width: 1200px;
+margin: auto;
+margin-bottom: 20px;
 
+.first {
+  flex: 1;
+}
+.second {
+  flex: 2;
+}
 
-export const GetInvolved = () => {
+button {
+  background-color: pink;
+  color: black;
+  font-weight: bold;
+  cursor: cursor;
+}
+`;
+
+export const ApplyNow = () => {
     return ( 
         <TextBody>
             <PageHeader title = 'MEDICAL MISSION APPLICATIONS' />
@@ -85,7 +105,25 @@ export const GetInvolved = () => {
                 <span style ={{ color: 'red' }}><u>*REGISTRATION UPDATE:</u> We have reached our maximum capacity for College, Gap Year, and High School students. We are no longer accepting applications for these 3 categories. Students in Professional schools (Medical, Dental, Optometry, and Pharmacy) are still welcome to apply. In any case we are still receiving more college/gap year/high school applications applied via Professional student application, those applications will be in the waiting list and we will inform you.
                 ​​​​​​​​ </span>
             </div>
+            <Section>
+                <button>APPLY AS A STUDENT</button>
+            </Section>
 
+            <div style={{ padding: '24px', maxWidth: '1200px', margin: 'auto'}}>
+                <h1>ADULT VOLUNTEER APPLICATION</h1>
+                <p>Non-health professional adults who are crucial to the operation and organization of the mission. Registered nurse practitioners, physician assistants, physical therapists, registered nurses, dental hygienists, clinic assistants, lab assistants and medical assistants are to register under this category because your licenses won’t need to be submitted to the Local Health Department in Vietnam.</p>            
+            </div>
+            <Section>
+                <button>APPLY AS AN ADULT</button>
+            </Section>
+
+            <div style={{ padding: '24px', maxWidth: '1200px', margin: 'auto'}}>
+                <h1>HEALTH PROFESSIONAL APPLICATION</h1>
+                <p>Primary care physicians, pediatricians, gynecologists, optometrists, dentists and pharmacists are to register under this category since your current professional licenses need be submitted to the Local Health Department in Vietnam.</p>
+            </div>
+            <Section>
+                <button>APPLY AS A HEALTH PROFESSIONAL</button>
+            </Section>
         </TextBody>
         
     );
