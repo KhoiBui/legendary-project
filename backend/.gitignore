@@ -27,3 +27,5 @@ compile_commands.json
 
 # Database schema
 db/schema.sql 
+
+CMakeUserPresets.json
