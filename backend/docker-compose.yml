@@ -24,7 +24,7 @@ services:
     ports:
       - '8080:8080'
     environment:
-      DATABASE_URL: postgresql://vnhope:vnhope@postgres:5432/vnhope?sslmode=disable
+      DATABASE_URL: 'postgresql://vnhope:vnhope@postgres:5432/vnhope?host=postgres&sslmode=disable'
     depends_on:
       postgres:
         condition: service_healthy

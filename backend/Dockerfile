@@ -7,6 +7,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y \
   clang \
   cmake \
+  ninja-build \
   libboost-all-dev \
   libasio-dev \
   postgresql-server-dev-all \
@@ -16,9 +17,10 @@ RUN apt-get update && apt-get install -y \
   pkg-config \
   && rm -rf /var/lib/apt/lists/*
 
-# Set clang as the default compiler
-ENV CC=clang
-ENV CXX=clang++
+# Set compiler paths explicitly
+ENV CC=/usr/bin/clang
+ENV CXX=/usr/bin/clang++
+ENV CMAKE_MAKE_PROGRAM=/usr/bin/ninja
 
 # Install Crow
 RUN git clone https://github.com/CrowCpp/Crow.git && \
@@ -50,7 +52,8 @@ WORKDIR /server
 COPY . .
 
 # Build the application
-RUN mkdir build && \
+RUN rm -rf build && \
+  mkdir build && \
   cd build && \
   cmake -DCMAKE_CXX_STANDARD=17 .. && \
   make
