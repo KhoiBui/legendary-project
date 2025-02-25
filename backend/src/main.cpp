@@ -10,6 +10,37 @@
 
 #define CROW_MAIN
 
+crow::response postApps(const crow::request &request) {
+    std::ifstream file_check("applications.json");
+    if (file_check.is_open()) {
+        file_check.close();
+        return crow::response(400, error2json("File already exists. Invalid POST request.").dump());
+    }
+    auto json_data = crow::json::load(request.body);
+    if (!json_data) {
+        return crow::response(400, error2json("Invalid JSON Input").dump());
+    }
+    crow::json::wvalue obj;
+    crow::json::wvalue new_application;
+    new_application["last_name"] = json_data["last_name"].s();
+    new_application["first_name"] = json_data["first_name"].s();
+    new_application["email"] = json_data["email"].s();
+    new_application["phone_number"] = json_data["phone_number"].s();
+    obj["applications"] = crow::json::wvalue::list();
+    obj["applications"][0] = std::move(new_application);
+    // crow::json::wvalue apps;
+    // apps["applications"] = crow::json::wvalue::list();
+    // apps["applications"][0]  = new_application;
+
+    std::ofstream file_out("applications.json");
+    if (!file_out.is_open()) {
+        return crow::response(500, error2json("Failed to create file").dump());
+    }
+    file_out << new_application.dump();
+
+    return crow::response(200, "File created and application added successfully");
+}
+
 crow::json::wvalue error2json(const std::string &errstring) {
     crow::json::wvalue r;
     r["error"] = errstring;
@@ -40,40 +71,8 @@ int main() {
     }
 
     crow::SimpleApp app;
-    crow::response postApps(const crow::request &request) {
-        std::ifstream file_check("applications.json");
-        if (file_check.is_open()) {
-            file_check.close();
-            return crow::response(400,
-                                  error2json("File already exists. Invalid POST request.").dump());
-        }
-        auto json_data = crow::json::load(request.body);
-        if (!json_data) {
-            return crow::response(400, error2json("Invalid JSON Input").dump());
-        }
-        crow::json::wvalue obj;
-        crow::json::wvalue new_application;
-        new_application["last_name"] = json_data["last_name"].s();
-        new_application["first_name"] = json_data["first_name"].s();
-        new_application["email"] = json_data["email"].s();
-        new_application["phone_number"] = json_data["phone_number"].s();
-        obj["applications"] = crow::json::wvalue::list();
-        obj["applications"][0] = std::move(new_application);
-        // crow::json::wvalue apps;
-        // apps["applications"] = crow::json::wvalue::list();
-        // apps["applications"][0]  = new_application;
-
-        std::ofstream file_out("applications.json");
-        if (!file_out.is_open()) {
-            return crow::response(500, error2json("Failed to create file").dump());
-        }
-        file_out << new_application.dump();
-
-        return crow::response(200, "File created and application added successfully");
-    }
 
     CROW_ROUTE(app, "/ping").methods(crow::HTTPMethod::Get)([]() { return "pong"; });
-    app.port(8080).run();
 
     CROW_ROUTE(app, "/applications")
         .methods(crow::HTTPMethod::Post)(
